@@ -1,4 +1,4 @@
-# how to create a Library project?
+# how to create an angular workspace project to work with multiple library projects?
 
 ## Steps:
 
