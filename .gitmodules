@@ -1,0 +1,3 @@
+[submodule "projects/ngx-common-ui"]
+	path = projects/ngx-common-ui
+	url = https://github.com/sunildivyam/ngx-common-ui.git
