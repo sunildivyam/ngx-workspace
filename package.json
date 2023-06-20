@@ -1,6 +1,19 @@
 {
-  "name": "ngx-workspace",
+  "name": "@annuadvent/ngx-workspace",
   "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Angular workspace project that makes it easier to integrate and work with multiple angular library and app projects.",
+  "homepage": "https://github.com/sunildivyam/ngx-workspace",
+  "bugs": "https://github.com/sunildivyam/ngx-workspace/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunildivyam/ngx-workspace.git"
+  },
+  "engines": {
+    "node": "18.16.0",
+    "npm": "9.5.1"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +21,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^16.1.0",
     "@angular/common": "^16.1.0",
