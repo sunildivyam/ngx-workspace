@@ -29,4 +29,11 @@ From ngx-workspace root folder, run
   - Commit and publish Initial changes to github main/master branch.
 - Add newly created lib project as a Git submodule to the workspace project
   - `git submodule add <https://github.com/sunildivyam/[new-lib-name].git> ./projects/[new-lib-name]`
-- `DELETE` the `./src/lib` folder and its content, if you do not want expose/export directly from Lib.
+- `DELETE` the `./src` folder and its content, if you do not want to expose/export directly from Lib.
+- add an public-api.ts file in the lib root and add an export to it
+
+  - `export const LIB_NAME = "ngx-common-ui";`
+  - This is needed as an import is needed at lib level, by ng-packager.
+  - Edit the entryPoint in ng-package.json accordingly.
+
+    `"entryFile": "public-api.ts",`
