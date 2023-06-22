@@ -6,7 +6,7 @@
     "ngx-common-ui": {
       "projectType": "library",
       "root": "projects/ngx-common-ui",
-      "sourceRoot": "projects/ngx-common-ui/src",
+      "sourceRoot": "projects/ngx-common-ui",
       "prefix": "anu",
       "architect": {
         "build": {
@@ -28,10 +28,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/ngx-common-ui/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
