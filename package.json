@@ -19,7 +19,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "//nh:add:module": "Generates all needed files for an angular library module, params: source/path/to/add/module",
+    "nh:add:module": "run-func ./node-helpers/lib-transform.service.js createLibModule",
+    "//nh:migrate": "Migrate from older Libs to this workspace, params: Source/path/older-lib  target/path/of/lib/in-this-workspace",
+    "nh:migrate": "run-func ./node-helpers/lib-transform.service.js runLibMigration"
   },
   "dependencies": {
     "@angular/animations": "^16.1.0",
@@ -46,6 +50,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^16.1.0",
+    "run-func": "^3.0.0",
     "typescript": "~5.1.3"
   }
 }

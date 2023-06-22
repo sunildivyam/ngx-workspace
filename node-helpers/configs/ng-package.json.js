@@ -4,7 +4,7 @@ const ngPackageJson = {
   '$schema': `../..${NG_PACKAGE_SCHEMA}`,
   'dest': `../../dist/${GENERIC_LIB_MODULE_NAME}`,
   'lib': {
-    'entryFile': 'src/public-api.ts',
+    'entryFile': './public-api.ts',
     'cssUrl': 'inline'
   }
 };

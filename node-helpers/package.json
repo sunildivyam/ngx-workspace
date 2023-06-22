@@ -1,9 +1,7 @@
 {
   "name": "nodejs-helpers",
   "version": "1.0.0",
-  "description": "Nodejs helpers",
-  "//type": "module",
-  "//main": "index.js",
+  "description": "Nodejs helpers- helps to generate angular lib modules and related files.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
