@@ -5,7 +5,7 @@
 From ngx-workspace root folder, run
 
 - Create new angular Library project
-  - `ng generate` `[new-lib-name]`
+  - `ng generate library` `[new-lib-name] --prefix=anu --style=scss`
   - Edit to prefix package name with `@annuadvent/` in `projects/[new-lib-name]/package.json` file.
   - Edit paths to prefix lib path name with `@annuadvent/` for the new lib in workspace root `./tsconfig.json`
   - Add/update additional inoformation to the new lib's `package.json`
@@ -40,3 +40,13 @@ From ngx-workspace root folder, run
 
   - Edit the angular.json too
     `"sourceRoot": "projects/[lib-name]",`
+  - Edit `angular.json`, and add schematics for `scss` styles:
+
+    ```
+    "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+
+    ```
