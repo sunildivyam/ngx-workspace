@@ -60,14 +60,17 @@
             ],
             "allowedCommonJsDependencies": [],
             "assets": [
-                "projects/ngx-ssr-app/src/favicon.ico",
-                "projects/ngx-ssr-app/src/assets",
-                {
-                  "glob": "robots.txt",
-                  "input": "projects/ngx-ssr-app/src/robots/development",
-                  "output": "./"
-                }
-              ],
+              "projects/ngx-ssr-app/src/favicon.ico",
+              "projects/ngx-ssr-app/src/assets",
+              {
+                "glob": "robots.txt",
+                "input": "projects/ngx-ssr-app/src/robots/development",
+                "output": "./"
+              }
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": []
+            },
             "styles": [
               "projects/ngx-ssr-app/src/styles.scss"
             ],
@@ -75,6 +78,10 @@
           },
           "configurations": {
             "production": {
+              "index": {
+                "input": "src/index.production.html",
+                "output": "index.original.html"
+              },
               "budgets": [
                 {
                   "type": "initial",
@@ -105,6 +112,10 @@
               "outputHashing": "all"
             },
             "staging": {
+              "index": {
+                "input": "src/index.staging.html",
+                "output": "index.original.html"
+              },
               "budgets": [
                 {
                   "type": "initial",
