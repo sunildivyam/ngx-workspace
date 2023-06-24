@@ -52,22 +52,22 @@
     "watch:ngx-ssr-app:production": "ng build --configuration production --watch --project ngx-ssr-app",
 
     "dev:ssr/**ngx-ssr-app": "------------------------------------",
-    "dev:ssr:ngx-ssr-app:development:": "ng run ngx-ssr-app:serve-ssr:development",
+    "dev:ssr:ngx-ssr-app:development": "ng run ngx-ssr-app:serve-ssr:development",
     "dev:ssr:ngx-ssr-app:staging": "ng run ngx-ssr-app:serve-ssr:staging",
     "dev:ssr:ngx-ssr-app:production": "ng run ngx-ssr-app:serve-ssr:production",
 
     "build:ssr/**ngx-ssr-app": "------------------------------------",
-    "build:ssr:ngx-ssr-app:development:": "npm run build:ngx-ssr-app:development && ng run ngx-ssr-app:server:development",
+    "build:ssr:ngx-ssr-app:development": "npm run build:ngx-ssr-app:development && ng run ngx-ssr-app:server:development",
     "build:ssr:ngx-ssr-app:staging": "npm run build:ngx-ssr-app:staging && ng run ngx-ssr-app:server:staging",
     "build:ssr:ngx-ssr-app:production": "npm run build:ngx-ssr-app:production && ng run ngx-ssr-app:server:production",
 
     "serve:ssr/**ngx-ssr-app": "------------------------------------",
-    "serve:ssr:ngx-ssr-app:development:": "npm run build:ssr:ngx-ssr-app:development && node dist/ngx-ssr-app/server/main.js",
+    "serve:ssr:ngx-ssr-app:development": "npm run build:ssr:ngx-ssr-app:development && node dist/ngx-ssr-app/server/main.js",
     "serve:ssr:ngx-ssr-app:staging": "npm run build:ssr:ngx-ssr-app:staging && node dist/ngx-ssr-app/server/main.js",
     "serve:ssr:ngx-ssr-app:production": "npm run build:ssr:ngx-ssr-app:production && node dist/ngx-ssr-app/server/main.js",
 
     "prerender/**ngx-ssr-app": "------------------------------------",
-    "prerender:ngx-ssr-app:development:": "ng run ngx-ssr-app:prerender:development",
+    "prerender:ngx-ssr-app:development": "ng run ngx-ssr-app:prerender:development",
     "prerender:ngx-ssr-app:staging": "ng run ngx-ssr-app:prerender:staging",
     "prerender:ngx-ssr-app:production": "ng run ngx-ssr-app:prerender:production"
   },

@@ -48,17 +48,26 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/ngx-ssr-app/browser",
-            "index": "projects/ngx-ssr-app/src/index.html",
+            "index": {
+              "input": "projects/ngx-ssr-app/src/index.html",
+              "output": "index.original.html"
+            },
             "main": "projects/ngx-ssr-app/src/main.ts",
+            "tsConfig": "projects/ngx-ssr-app/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/ngx-ssr-app/tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
+            "allowedCommonJsDependencies": [],
             "assets": [
-              "projects/ngx-ssr-app/src/favicon.ico",
-              "projects/ngx-ssr-app/src/assets"
-            ],
+                "projects/ngx-ssr-app/src/favicon.ico",
+                "projects/ngx-ssr-app/src/assets",
+                {
+                  "glob": "robots.txt",
+                  "input": "projects/ngx-ssr-app/src/robots/development",
+                  "output": "./"
+                }
+              ],
             "styles": [
               "projects/ngx-ssr-app/src/styles.scss"
             ],
@@ -76,6 +85,15 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
+                }
+              ],
+              "assets": [
+                "projects/ngx-ssr-app/src/favicon.ico",
+                "projects/ngx-ssr-app/src/assets",
+                {
+                  "glob": "robots.txt",
+                  "input": "projects/ngx-ssr-app/src/robots/production",
+                  "output": "./"
                 }
               ],
               "fileReplacements": [
@@ -97,6 +115,15 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
+                }
+              ],
+              "assets": [
+                "projects/ngx-ssr-app/src/favicon.ico",
+                "projects/ngx-ssr-app/src/assets",
+                {
+                  "glob": "robots.txt",
+                  "input": "projects/ngx-ssr-app/src/robots/staging",
+                  "output": "./"
                 }
               ],
               "fileReplacements": [
