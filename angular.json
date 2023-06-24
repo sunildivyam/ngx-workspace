@@ -81,7 +81,7 @@
               "fileReplacements": [
                 {
                   "replace": "projects/ngx-ssr-app/src/environments/environment.ts",
-                  "with": "projects/ngx-ssr-app/src/environments/environment.prod.ts"
+                  "with": "projects/ngx-ssr-app/src/environments/environment.production.ts"
                 }
               ],
               "outputHashing": "all"
