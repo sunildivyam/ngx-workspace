@@ -78,6 +78,33 @@
                   "maximumError": "4kb"
                 }
               ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-ssr-app/src/environments/environment.ts",
+                  "with": "projects/ngx-ssr-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "staging": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-ssr-app/src/environments/environment.ts",
+                  "with": "projects/ngx-ssr-app/src/environments/environment.staging.ts"
+                }
+              ],
               "outputHashing": "all"
             },
             "development": {
@@ -96,6 +123,9 @@
           "configurations": {
             "production": {
               "browserTarget": "ngx-ssr-app:build:production"
+            },
+            "staging": {
+              "browserTarget": "ngx-ssr-app:build:staging"
             },
             "development": {
               "browserTarget": "ngx-ssr-app:build:development"
@@ -140,6 +170,9 @@
             "production": {
               "outputHashing": "media"
             },
+            "staging": {
+              "outputHashing": "media"
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -156,6 +189,10 @@
             "development": {
               "browserTarget": "ngx-ssr-app:build:development",
               "serverTarget": "ngx-ssr-app:server:development"
+            },
+            "staging": {
+              "browserTarget": "ngx-ssr-app:build:staging",
+              "serverTarget": "ngx-ssr-app:server:staging"
             },
             "production": {
               "browserTarget": "ngx-ssr-app:build:production",
@@ -175,6 +212,10 @@
             "production": {
               "browserTarget": "ngx-ssr-app:build:production",
               "serverTarget": "ngx-ssr-app:server:production"
+            },
+            "staging": {
+              "browserTarget": "ngx-ssr-app:build:staging",
+              "serverTarget": "ngx-ssr-app:server:staging"
             },
             "development": {
               "browserTarget": "ngx-ssr-app:build:development",

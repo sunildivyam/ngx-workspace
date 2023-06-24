@@ -16,10 +16,6 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
     "/**git:modules:sync": "Sync all git submodules",
     "git:modules:sync": "git submodule sync",
     "/**ng:add:lib": "generates a new lib project, provide a param [lib-name]",
@@ -32,10 +28,48 @@
     "nh:add:module": "run-func ./node-helpers/lib-transform.service.js createLibModule",
     "/**nh:migrate": "Migrate from older Libs to this workspace, params: Source/path/older-lib  target/path/of/lib/in-this-workspace",
     "nh:migrate": "run-func ./node-helpers/lib-transform.service.js runLibMigration",
-    "dev:ssr": "ng run ngx-ssr-app:serve-ssr",
-    "serve:ssr": "node dist/ngx-ssr-app/server/main.js",
-    "build:ssr": "ng build && ng run ngx-ssr-app:server",
-    "prerender": "ng run ngx-ssr-app:prerender"
+
+    "/**ngx-common-ui": "*********ngx-common-ui******************",
+    "build:ngx-common-ui": "ng build ngx-common-ui",
+    "watch:ngx-common-ui": "ng build ngx-common-ui --watch",
+    "publish:ngx-common-ui": "npm run build:ngx-common-ui && cd dist/ngx-common-ui && npm publish --access public",
+
+    "/**ngx-ssr-app": "*********ngx-ssr-app******************",
+    "test:ngx-ssr-app": "ng test",
+    "start/**ngx-ssr-app": "------------------------------------",
+    "start:ngx-ssr-app:development": "ng serve --configuration development --project ngx-ssr-app",
+    "start:ngx-ssr-app:staging": "ng serve --configuration staging --project ngx-ssr-app",
+    "start:ngx-ssr-app:production": "ng serve --configuration production --project ngx-ssr-app",
+
+    "build/**ngx-ssr-app": "------------------------------------",
+    "build:ngx-ssr-app:development": "ng build --configuration development --project ngx-ssr-app",
+    "build:ngx-ssr-app:staging": "ng build --configuration staging --project ngx-ssr-app",
+    "build:ngx-ssr-app:production": "ng build --configuration production --project ngx-ssr-app",
+
+    "watch/**ngx-ssr-app": "------------------------------------",
+    "watch:ngx-ssr-app:development": "ng build --configuration development --watch --project ngx-ssr-app",
+    "watch:ngx-ssr-app:staging": "ng build --configuration staging --watch --project ngx-ssr-app",
+    "watch:ngx-ssr-app:production": "ng build --configuration production --watch --project ngx-ssr-app",
+
+    "dev:ssr/**ngx-ssr-app": "------------------------------------",
+    "dev:ssr:ngx-ssr-app:development:": "ng run ngx-ssr-app:serve-ssr:development",
+    "dev:ssr:ngx-ssr-app:staging": "ng run ngx-ssr-app:serve-ssr:staging",
+    "dev:ssr:ngx-ssr-app:production": "ng run ngx-ssr-app:serve-ssr:production",
+
+    "build:ssr/**ngx-ssr-app": "------------------------------------",
+    "build:ssr:ngx-ssr-app:development:": "npm run build:ngx-ssr-app:development && ng run ngx-ssr-app:server:development",
+    "build:ssr:ngx-ssr-app:staging": "npm run build:ngx-ssr-app:staging && ng run ngx-ssr-app:server:staging",
+    "build:ssr:ngx-ssr-app:production": "npm run build:ngx-ssr-app:production && ng run ngx-ssr-app:server:production",
+
+    "serve:ssr/**ngx-ssr-app": "------------------------------------",
+    "serve:ssr:ngx-ssr-app:development:": "npm run build:ssr:ngx-ssr-app:development && node dist/ngx-ssr-app/server/main.js",
+    "serve:ssr:ngx-ssr-app:staging": "npm run build:ssr:ngx-ssr-app:staging && node dist/ngx-ssr-app/server/main.js",
+    "serve:ssr:ngx-ssr-app:production": "npm run build:ssr:ngx-ssr-app:production && node dist/ngx-ssr-app/server/main.js",
+
+    "prerender/**ngx-ssr-app": "------------------------------------",
+    "prerender:ngx-ssr-app:development:": "ng run ngx-ssr-app:prerender:development",
+    "prerender:ngx-ssr-app:staging": "ng run ngx-ssr-app:prerender:staging",
+    "prerender:ngx-ssr-app:production": "ng run ngx-ssr-app:prerender:production"
   },
   "dependencies": {
     "@angular/animations": "16.1.0",
