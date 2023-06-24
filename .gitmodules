@@ -1,3 +1,6 @@
 [submodule "projects/ngx-common-ui"]
 	path = projects/ngx-common-ui
 	url = https://github.com/sunildivyam/ngx-common-ui.git
+[submodule "projects/ngx-ssr-app"]
+	path = projects/ngx-ssr-app
+	url = https://github.com/sunildivyam/ngx-ssr-app.git

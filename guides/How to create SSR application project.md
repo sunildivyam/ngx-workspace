@@ -13,6 +13,11 @@ From ngx-workspace root folder, run
   - Commit and publish Initial changes to github main/master branch.
 - Add newly created app project as a Git submodule to the workspace project
   - `git submodule add <https://github.com/sunildivyam/[new-app-name].git> ./projects/[new-app-name]`
-- Copy contents of `ngx-ssr-app` folder to newly created app folder `[new-app-name]`
+- Add SSR to `[new-app-project]`, there are two ways to do that:
+  1) Copy contents of already ssr initialized `ngx-ssr-app` folder to newly created app folder `[new-app-name]`
     - Edit `package.json`
         - Change package name to `[@annuadvent/new-app-name]`;
+  2) Or, For a fresh ssr app, run:
+    - `ng add @nguniversal/express-engine --project [new-app-name]`
+    - Or, `npm run ng:add:app:ssr []new-app-name]`
+    - Run `npm init` from the [new-app=name] root folder.

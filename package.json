@@ -20,25 +20,22 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-
     "/**git:modules:sync": "Sync all git submodules",
     "git:modules:sync": "git submodule sync",
     "/**ng:add:lib": "generates a new lib project, provide a param [lib-name]",
     "ng:add:lib": "ng generate library --prefix=anu --style=scss",
     "/**ng:add:app": "generates a new app project, provide a param [app-name]",
     "ng:add:app": "ng generate application --prefix=app --style=scss --routing=true",
-    "/**ng:add:app:ssr": "adds SSR to project app, provide a param --project = [app-name]",
-    "ng:add:app:ssr": "ng add @nguniversal/express-engine",
-
+    "/**ng:add:app:ssr": "adds SSR to project app, provide a param [app-name]",
+    "ng:add:app:ssr": "ng add @nguniversal/express-engine --project",
     "/**nh:add:module": "Generates all needed files for an angular library module, params: source/path/to/add/module",
     "nh:add:module": "run-func ./node-helpers/lib-transform.service.js createLibModule",
     "/**nh:migrate": "Migrate from older Libs to this workspace, params: Source/path/older-lib  target/path/of/lib/in-this-workspace",
     "nh:migrate": "run-func ./node-helpers/lib-transform.service.js runLibMigration",
-
-    "dev:ssr": "ng run annu-quiz-app:serve-ssr",
-    "serve:ssr": "node dist/annu-quiz-app/server/main.js",
-    "build:ssr": "ng build && ng run annu-quiz-app:server",
-    "prerender": "ng run annu-quiz-app:prerender"
+    "dev:ssr": "ng run ngx-ssr-app:serve-ssr",
+    "serve:ssr": "node dist/ngx-ssr-app/server/main.js",
+    "build:ssr": "ng build && ng run ngx-ssr-app:server",
+    "prerender": "ng run ngx-ssr-app:prerender"
   },
   "dependencies": {
     "@angular/animations": "16.1.0",
