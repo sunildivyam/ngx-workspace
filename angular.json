@@ -79,7 +79,7 @@
           "configurations": {
             "production": {
               "index": {
-                "input": "src/index.production.html",
+                "input": "projects/ngx-ssr-app/src/index.production.html",
                 "output": "index.original.html"
               },
               "budgets": [
@@ -113,7 +113,7 @@
             },
             "staging": {
               "index": {
-                "input": "src/index.staging.html",
+                "input": "projects/ngx-ssr-app/src/index.staging.html",
                 "output": "index.original.html"
               },
               "budgets": [
@@ -206,10 +206,22 @@
           },
           "configurations": {
             "production": {
-              "outputHashing": "media"
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-ssr-app/src/environments/environment.ts",
+                  "with": "projects/ngx-ssr-app/src/environments/environment.production.ts"
+                }
+              ]
             },
             "staging": {
-              "outputHashing": "media"
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-ssr-app/src/environments/environment.ts",
+                  "with": "projects/ngx-ssr-app/src/environments/environment.staging.ts"
+                }
+              ]
             },
             "development": {
               "buildOptimizer": false,

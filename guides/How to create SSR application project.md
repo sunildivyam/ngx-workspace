@@ -263,3 +263,10 @@ From ngx-workspace root folder, run
         }
       }
       ```
+- Firebase setup
+  - `firebase-setup` folder has firebase setup already initialized, with `staging` and `production` projects.
+  - Replace firebase project names with your own firebase projects, as needed.
+  - Update/remove/add configurations as per your requirements.
+  - To work with firebase npm scripts and command line, you need to install `firebase-tools` gobally.
+    `npm i firebase-tools -g`
+  - login to firebase from command line, `firebase login`
