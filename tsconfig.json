@@ -17,7 +17,13 @@
       ],
       "@annuadvent/ngx-common-ui/*": [
         "dist/ngx-common-ui/*"
-      ]
+      ],
+      "@annuadvent/ngx-core": [
+        "dist/ngx-core"
+      ],
+      "@annuadvent/ngx-core/*": [
+        "dist/ngx-core/*"
+      ],
     },
     "declaration": false,
     "downlevelIteration": true,

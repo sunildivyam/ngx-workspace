@@ -5,7 +5,7 @@
 From ngx-workspace root folder, run
 
 - Create new angular Library project, run `ng` or `npm` as given below:
-  - `ng generate library` `[new-lib-name] --prefix=anu --style=scss`
+  - `ng generate library` `[new-lib-name] --prefix=anu`
   - Or `npm run ng:add:lib [lib-name]`
   - Edit to prefix package name with `@annuadvent/` in `projects/[new-lib-name]/package.json` file.
   - Edit paths to prefix lib path name with `@annuadvent/` for the new lib in workspace root `./tsconfig.json`
@@ -36,10 +36,12 @@ From ngx-workspace root folder, run
   - `export const LIB_NAME = "[lib-name]";`
   - This is needed as an import is needed at lib level, by ng-packager.
   - Edit the entryPoint in ng-package.json accordingly.
+    ```
+    "entryFile": "public-api.ts",
+    "cssUrl": "inline"
+    ```
 
-    `"entryFile": "public-api.ts",`
-
-  - Edit the angular.json too
+  - Edit the `angular.json` too
     `"sourceRoot": "projects/[lib-name]",`
   - Edit `angular.json`, and add schematics for `scss` styles:
 
@@ -48,6 +50,20 @@ From ngx-workspace root folder, run
         "@schematics/angular:component": {
           "style": "scss"
         }
-      }
+      },
 
     ```
+- Update `ngx-workspace/package.json` with `npm` scripts to `build` and `deploy` library
+  ```
+  "/**[lib-name]": "*********[lib-name]******************",
+  "build:[lib-name]": "ng build [lib-name]",
+  "watch:[lib-name]": "ng build [lib-name] --watch",
+  "publish:[lib-name]": "npm run build:[lib-name] && cd dist/[lib-name] && npm publish --access public",
+  ```
+  Example:
+  ```
+  "/**ngx-common-ui": "*********ngx-common-ui******************",
+  "build:ngx-common-ui": "ng build ngx-common-ui",
+  "watch:ngx-common-ui": "ng build ngx-common-ui --watch",
+  "publish:ngx-common-ui": "npm run build:ngx-common-ui && cd dist/ngx-common-ui && npm publish --access public",
+  ```

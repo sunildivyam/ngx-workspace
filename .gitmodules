@@ -4,3 +4,6 @@
 [submodule "projects/ngx-ssr-app"]
 	path = projects/ngx-ssr-app
 	url = https://github.com/sunildivyam/ngx-ssr-app.git
+[submodule "projects/ngx-core"]
+	path = projects/ngx-core
+	url = https://github.com/sunildivyam/ngx-core.git
