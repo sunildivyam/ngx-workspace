@@ -24,12 +24,6 @@ From ngx-workspace root folder, run
     "npm": "9.5.1"
     },
     ```
-- Create new Github repository for your library
-  - Run `git init` in the root folder of your lib `./projects/[new-lib-name]`
-  - From your Github desktop or command line or from any other git tool, Add and publish newly created lib git repository to remote github.
-  - Commit and publish Initial changes to github main/master branch.
-- Add newly created lib project as a Git submodule to the workspace project
-  - `git submodule add <https://github.com/sunildivyam/[new-lib-name].git> ./projects/[new-lib-name]`
 - `DELETE` the `./src` folder and its content, if you do not want to expose/export directly from Lib.
 - add an public-api.ts file in the lib root and add an export to it
 
@@ -67,3 +61,9 @@ From ngx-workspace root folder, run
   "watch:ngx-common-ui": "ng build ngx-common-ui --watch",
   "publish:ngx-common-ui": "npm run build:ngx-common-ui && cd dist/ngx-common-ui && npm publish --access public",
   ```
+- Create new Github repository for your library
+  - Run `git init` in the root folder of your lib `./projects/[new-lib-name]`
+  - From your Github desktop or command line or from any other git tool, Add and publish newly created lib git repository to remote github.
+  - Commit and publish Initial changes to github main/master branch.
+- Add newly created lib project as a Git submodule to the workspace project
+  - `git submodule add <https://github.com/sunildivyam/[new-lib-name].git> ./projects/[new-lib-name]`

@@ -24,6 +24,12 @@
       "@annuadvent/ngx-core/*": [
         "dist/ngx-core/*"
       ],
+      "@annuadvent/ngx-openai": [
+        "dist/ngx-openai"
+      ],
+      "@annuadvent/ngx-openai/*": [
+        "dist/ngx-openai/*"
+      ]
     },
     "declaration": false,
     "downlevelIteration": true,

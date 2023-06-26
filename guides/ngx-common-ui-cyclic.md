@@ -2,8 +2,9 @@
 - footer-nav.docs => menu.docs
 - footer-nav.component => menu.interface
 - ImageBrowser => AuthFirebaseService | ImageFireStoreService | UtilsService | LibConfig
+    - Add ImageBrowser Module, separately
 - utils.service
-    - ove following function to relevant module service.
+    - move following function to relevant module service.
     ```
     /**
     * Generates a message for an image upload, based on image specifications.
@@ -20,3 +21,4 @@
     }
 
     ```
+-
