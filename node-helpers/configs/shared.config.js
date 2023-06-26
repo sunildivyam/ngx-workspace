@@ -8,9 +8,9 @@ const DIST_FOLDER_NAME = 'dist';
 const NGX_MODULE_NAME_TOKEN = 'NgxModule';
 
 const MODULE_FILES = {
-    PACKAGE_JSON:'package.json',
-    NG_PACKAGE_JSON:'ng-package.json',
-    PUBLIC_API_TS:'public-api.ts',
+    PACKAGE_JSON: 'package.json',
+    NG_PACKAGE_JSON: 'ng-package.json',
+    PUBLIC_API_TS: 'public-api.ts',
     INDEX_TS: 'index.ts',
     README: 'readme.md',
     NGX_MODULE: `./src/${NGX_MODULE_NAME_TOKEN}.module.ts`
@@ -25,6 +25,7 @@ const ANGULAR_ASSETS = {
     CLASS: { id: 'class', folderName: 'classes' },
     RESOLVER: { id: 'resolver', folderName: 'resolvers' },
     CONSTANTS: { id: 'constants', folderName: 'constants' },
+    ENUMS: { id: 'enums', folderName: 'enums' },
 }
 
 module.exports =

@@ -86,6 +86,10 @@ const getTargetCopyPath = (file, targetFolder, parentSrcFolder) => {
             // ./src/contants/file
             targetFileFullPath = `${targetFolder}/src/${ANGULAR_ASSETS.CONSTANTS.folderName}/${file}`;
             break;
+        case ANGULAR_ASSETS.ENUMS.id:
+            // ./src/enums/file
+            targetFileFullPath = `${targetFolder}/src/${ANGULAR_ASSETS.ENUMS.folderName}/${file}`;
+            break;
         default:
             // All other files should be co[ied to ./src folder
             targetFileFullPath = `${targetFolder}/src/${file}`;

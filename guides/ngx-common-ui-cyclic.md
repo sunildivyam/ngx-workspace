@@ -21,4 +21,30 @@
     }
 
     ```
--
+- openai-image-form.component
+    - move upload image to consumer component code
+    ```
+    public async uploadImage(): Promise<void> {
+        if (!this.generatedBase64Image) return;
+        this.startLoading();
+        try {
+        const imageFileInfo: ImageFileInfo =
+            await this.imageStoreService.uploadImage(
+            this.imageFileName,
+            this.generatedBase64Image,
+            true,
+            this.authService.getCurrentUserId(),
+            true
+            );
+        this.generatedBase64Image = '';
+        this.savedImageUrl = `${this.libConfig.imagesSourceUrl}${imageFileInfo.fullPath}`;
+        this.fileUploaded.emit(imageFileInfo);
+
+        this.stopLoading();
+        return;
+        } catch (err) {
+        this.stopLoading(err.message);
+        return;
+        }
+    }
+    ```
