@@ -48,5 +48,6 @@
         }
     }
     ```
-- openai openai-form and openai-image-form have been moved to ngx-openai
-- sitemap is moved to sitemap module in ngx-core
+- openai openai-form and openai-image-form have been moved to `ngx-tools` as `openai module`
+- `sitemap` is moved to sitemap module in `ngx-tools`
+- `firebase` is moved to firebase module in `ngx-tools`
