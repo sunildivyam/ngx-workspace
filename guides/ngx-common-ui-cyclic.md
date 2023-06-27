@@ -48,3 +48,5 @@
         }
     }
     ```
+- openai openai-form and openai-image-form have been moved to ngx-openai
+- sitemap is moved to sitemap module in ngx-core

@@ -24,11 +24,11 @@
       "@annuadvent/ngx-core/*": [
         "dist/ngx-core/*"
       ],
-      "@annuadvent/ngx-openai": [
-        "dist/ngx-openai"
+      "@annuadvent/ngx-tools": [
+        "dist/ngx-tools"
       ],
-      "@annuadvent/ngx-openai/*": [
-        "dist/ngx-openai/*"
+      "@annuadvent/ngx-tools/*": [
+        "dist/ngx-tools/*"
       ]
     },
     "declaration": false,

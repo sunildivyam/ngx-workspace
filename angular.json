@@ -322,10 +322,10 @@
         }
       }
     },
-    "ngx-openai": {
+    "ngx-tools": {
       "projectType": "library",
-      "root": "projects/ngx-openai",
-      "sourceRoot": "projects/ngx-openai",
+      "root": "projects/ngx-tools",
+      "sourceRoot": "projects/ngx-tools",
       "prefix": "anu",
       "schematics": {
         "@schematics/angular:component": {
@@ -336,14 +336,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ngx-openai/ng-package.json"
+            "project": "projects/ngx-tools/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-openai/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-tools/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ngx-openai/tsconfig.lib.json"
+              "tsConfig": "projects/ngx-tools/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -351,7 +351,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/ngx-openai/tsconfig.spec.json",
+            "tsConfig": "projects/ngx-tools/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"

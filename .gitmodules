@@ -7,6 +7,6 @@
 [submodule "projects/ngx-core"]
 	path = projects/ngx-core
 	url = https://github.com/sunildivyam/ngx-core.git
-[submodule "projects/ngx-openai"]
-	path = projects/ngx-openai
-	url = https://github.com/sunildivyam/ngx-openai.git
+[submodule "projects/ngx-tools"]
+	path = projects/ngx-tools
+	url = https://github.com/sunildivyam/ngx-tools.git
