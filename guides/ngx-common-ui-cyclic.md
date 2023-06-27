@@ -51,5 +51,5 @@
 - openai openai-form and openai-image-form have been moved to `ngx-tools` as `openai module`
     - ui image form is moved here temporarily, but should have 2 different image-form components each for ngx-common-ui and openai.
 
-- `sitemap` is moved to sitemap module in `ngx-tools`
+- `sitemap` is moved to sitemap module in `ngx-tools` (TODO: move this from temp whre it is copied temporarily)
 - `firebase` is moved to firebase module in `ngx-tools`
