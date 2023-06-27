@@ -5,8 +5,11 @@ const ngPackageJson = {
   'dest': `../../dist/${GENERIC_LIB_MODULE_NAME}`,
   'lib': {
     'entryFile': './public-api.ts',
-    'cssUrl': 'inline'
+    'cssUrl': 'inline',
+    "styleIncludePaths": [
+      "../scss"
+    ]
   }
 };
 
-module.exports = {ngPackageJson};
+module.exports = { ngPackageJson };

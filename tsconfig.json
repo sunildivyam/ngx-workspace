@@ -5,30 +5,30 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noPropertyAccessFromIndexSignature": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
       "@annuadvent/ngx-common-ui": [
-        "dist/ngx-common-ui"
+        "projects/ngx-common-ui"
       ],
       "@annuadvent/ngx-common-ui/*": [
-        "dist/ngx-common-ui/*"
+        "projects/ngx-common-ui/*"
       ],
       "@annuadvent/ngx-core": [
-        "dist/ngx-core"
+        "projects/ngx-core"
       ],
       "@annuadvent/ngx-core/*": [
-        "dist/ngx-core/*"
+        "projects/ngx-core/*"
       ],
       "@annuadvent/ngx-tools": [
-        "dist/ngx-tools"
+        "projects/ngx-tools"
       ],
       "@annuadvent/ngx-tools/*": [
-        "dist/ngx-tools/*"
+        "projects/ngx-tools/*"
       ]
     },
     "declaration": false,

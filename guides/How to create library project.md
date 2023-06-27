@@ -67,3 +67,18 @@ From ngx-workspace root folder, run
   - Commit and publish Initial changes to github main/master branch.
 - Add newly created lib project as a Git submodule to the workspace project
   - `git submodule add <https://github.com/sunildivyam/[new-lib-name].git> ./projects/[new-lib-name]`
+- All library project must have their own path defined in `tsconfig.lib.json` for all other libraries used in it, from `dist` folder.
+  - Workspace root tsconfig.json should have paths `projects/[lib-name]` while `[lib-name]/tsconfig.lib.json` should have paths `dist/[lib-name]`.
+  - Example: If let's say `ngx-common-ui` library consumes `ngx-core` modules, then `ngx-common-ui/tsconf.lib.ts` file must have following paths:
+    ```
+    "paths": {
+        "@annuadvent/ngx-core": [
+          "dist/ngx-core"
+        ],
+        "@annuadvent/ngx-core/*": [
+          "dist/ngx-core/*"
+        ],
+      }
+    ```
+  - This is to avoid below **ERROR**:
+    `.ngtypecheck.ts' is not under 'rootDir'. 'rootDir' is expected to contain all source files`
