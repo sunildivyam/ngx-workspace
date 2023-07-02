@@ -12,7 +12,7 @@
 
    - Example:
 
-     `npm run nh:migrate ../annu-ng-lib/projects/annu-ng-lib/src/components/common-ui projects/ngx-common-ui`
+     `npm run nh:migrate ../annu-ng-lib/projects/annu-ng-lib/src/lib/components/common-ui projects/ngx-common-ui`
 
 3. Verify the migration mannually.
 4. There would be some imports in your module's angular files that you need to correct mannually.
