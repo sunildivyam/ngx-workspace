@@ -32,7 +32,10 @@ From ngx-workspace root folder, run
   - Edit the entryPoint in ng-package.json accordingly.
     ```
     "entryFile": "public-api.ts",
-    "cssUrl": "inline"
+    "cssUrl": "inline",
+    "styleIncludePaths": [
+      "./scss"
+    ]
     ```
 
   - Edit the `angular.json` too

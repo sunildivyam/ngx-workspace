@@ -29,6 +29,12 @@
       ],
       "@annuadvent/ngx-tools/*": [
         "projects/ngx-tools/*"
+      ],
+      "@annuadvent/ngx-cms": [
+        "projects/ngx-cms"
+      ],
+      "@annuadvent/ngx-cms/*": [
+        "projects/ngx-cms/*"
       ]
     },
     "declaration": false,

@@ -10,3 +10,6 @@
 [submodule "projects/ngx-tools"]
 	path = projects/ngx-tools
 	url = https://github.com/sunildivyam/ngx-tools.git
+[submodule "projects/ngx-cms"]
+	path = projects/ngx-cms
+	url = https://github.com/sunildivyam/ngx-cms.git
