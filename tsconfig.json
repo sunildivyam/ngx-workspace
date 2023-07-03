@@ -1,4 +1,7 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
+/*
+  "stream" path is added to support "xml-js" library.
+*/
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -12,6 +15,9 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
+      "stream": [
+        "node_modules/stream-browserify"
+      ],
       "@annuadvent/ngx-common-ui": [
         "projects/ngx-common-ui"
       ],

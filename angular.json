@@ -104,7 +104,16 @@
             "polyfills": [
               "zone.js"
             ],
-            "allowedCommonJsDependencies": [],
+            "allowedCommonJsDependencies": [
+              "dialog-polyfill",
+              "prismjs",
+              "buffer",
+              "stream",
+              "xml-js",
+              "showdown",
+              "openai",
+              "compressorjs"
+            ],
             "assets": [
               "projects/ngx-ssr-app/src/favicon.ico",
               "projects/ngx-ssr-app/src/assets",
@@ -115,7 +124,13 @@
               }
             ],
             "stylePreprocessorOptions": {
-              "includePaths": []
+              "includePaths": [
+                "node_modules/@annuadvent/ngx-common-ui/scss",
+                "dist/ngx-common-ui/scss",
+                "projects/ngx-common-ui/scss",
+                "node_modules/prismjs/themes",
+                "node_modules/firebaseui/dist"
+              ]
             },
             "styles": [
               "projects/ngx-ssr-app/src/styles.scss"
@@ -248,7 +263,16 @@
             "outputPath": "dist/ngx-ssr-app/server",
             "main": "projects/ngx-ssr-app/server.ts",
             "tsConfig": "projects/ngx-ssr-app/tsconfig.server.json",
-            "inlineStyleLanguage": "scss"
+            "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/@annuadvent/ngx-common-ui/scss",
+                "dist/ngx-common-ui/scss",
+                "projects/ngx-common-ui/scss",
+                "node_modules/prismjs/themes",
+                "node_modules/firebaseui/dist"
+              ]
+            }
           },
           "configurations": {
             "production": {

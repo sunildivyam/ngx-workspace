@@ -110,8 +110,10 @@
     "firebase-functions": "^4.4.1",
     "firebaseui": "^6.0.2",
     "openai": "^3.3.0",
+    "prismjs": "^1.29.0",
     "rxjs": "~7.8.0",
     "showdown": "^2.1.0",
+    "stream-browserify": "^3.0.0",
     "tslib": "^2.3.0",
     "xml-js": "^1.6.11",
     "zone.js": "~0.13.0"
