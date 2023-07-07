@@ -37,6 +37,14 @@ From ngx-workspace root folder, run
       "./scss"
     ]
     ```
+  - If `[lib-name]` uses any existing or external library's `SCSS` styles, then thier `scss` source folder path has to be added in the `[lib-name/ng-package.json]` file's `styleIncludePaths` for both `dist` and `node_modules` folders:
+    ```
+    "styleIncludePaths": [
+      "../../dist/ngx-common-ui/scss",
+      "../../node_modules/ngx-common-ui/scss"
+    ]
+    ```
+    **Note:**: ***This has to be included in all `[lib-name]/[module-name]/ng-package.json` files of each module that imports those styles.***
 
   - Edit the `angular.json` too
     `"sourceRoot": "projects/[lib-name]",`
@@ -64,24 +72,44 @@ From ngx-workspace root folder, run
   "watch:ngx-common-ui": "ng build ngx-common-ui --watch",
   "publish:ngx-common-ui": "npm run build:ngx-common-ui && cd dist/ngx-common-ui && npm publish --access public",
   ```
+- If your library uses another library from the workspace, then Add following to the `[lib-name/tsConfig.json]` files's `paths` array (**Why this is needed?**, see **More Info** section below):
+  ```
+  "paths": {
+    "@annuadvent/[existing-lib-name]": [
+      "dist/[existing-lib-name]"
+    ],
+    "@annuadvent/[existing-lib-name]/*": [
+      "dist/[existing-lib-name]/*"
+    ]
+  }
+  ```
+
+  **Example:**
+  ```
+  "paths": {
+    "@annuadvent/ngx-common-ui": [
+      "dist/ngx-common-ui"
+    ],
+    "@annuadvent/ngx-common-ui/*": [
+      "dist/ngx-common-ui/*"
+    ],
+    "@annuadvent/ngx-core": [
+      "dist/ngx-core"
+    ],
+    "@annuadvent/ngx-core/*": [
+      "dist/ngx-core/*"
+    ]
+  }
+  ```
+  **More Info**
+    - All library project must have their own path defined in `tsconfig.lib.json` for all other libraries used in it, from `dist` folder.
+    - Workspace root tsconfig.json should have paths `projects/[lib-name]` while `[lib-name]/tsconfig.lib.json` should have paths `dist/[lib-name]`.
+    - This is to avoid below **ERROR**:
+    `.ngtypecheck.ts' is not under 'rootDir'. 'rootDir' is expected to contain all source files`
+
 - Create new Github repository for your library
   - Run `git init` in the root folder of your lib `./projects/[new-lib-name]`
   - From your Github desktop or command line or from any other git tool, Add and publish newly created lib git repository to remote github.
   - Commit and publish Initial changes to github main/master branch.
 - Add newly created lib project as a Git submodule to the workspace project
-  - `git submodule add <https://github.com/sunildivyam/[new-lib-name].git> ./projects/[new-lib-name]`
-- All library project must have their own path defined in `tsconfig.lib.json` for all other libraries used in it, from `dist` folder.
-  - Workspace root tsconfig.json should have paths `projects/[lib-name]` while `[lib-name]/tsconfig.lib.json` should have paths `dist/[lib-name]`.
-  - Example: If let's say `ngx-common-ui` library consumes `ngx-core` modules, then `ngx-common-ui/tsconf.lib.ts` file must have following paths:
-    ```
-    "paths": {
-        "@annuadvent/ngx-core": [
-          "dist/ngx-core"
-        ],
-        "@annuadvent/ngx-core/*": [
-          "dist/ngx-core/*"
-        ],
-      }
-    ```
-  - This is to avoid below **ERROR**:
-    `.ngtypecheck.ts' is not under 'rootDir'. 'rootDir' is expected to contain all source files`
+  - `git submodule add https://github.com/sunildivyam/[new-lib-name].git ./projects/[new-lib-name]`

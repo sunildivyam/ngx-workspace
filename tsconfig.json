@@ -41,6 +41,12 @@
       ],
       "@annuadvent/ngx-cms/*": [
         "projects/ngx-cms/*"
+      ],
+      "@annuadvent/ngx-lib-docs": [
+        "projects/ngx-lib-docs"
+      ],
+      "@annuadvent/ngx-lib-docs/*": [
+        "projects/ngx-lib-docs/*"
       ]
     },
     "declaration": false,
