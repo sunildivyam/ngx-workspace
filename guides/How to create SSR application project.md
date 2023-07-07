@@ -7,20 +7,15 @@ From ngx-workspace root folder, run
 - Create new angular Library project, run `ng` or `npm` as given below:
   - `ng generate application --prefix=app --style=scss --routing=true [app-name]`
   - Or `npm run ng:add:app [app-name]`
-- Create new Github repository for your application
-  - Run `git init` in the root folder of your lib `./projects/[new-app-name]`
-  - From your Github desktop or command line or from any other git tool, Add and publish newly created lib git repository to remote github.
-  - Commit and publish Initial changes to github main/master branch.
-- Add newly created app project as a Git submodule to the workspace project
-  - `git submodule add <https://github.com/sunildivyam/[new-app-name].git> ./projects/[new-app-name]`
+
 - Add SSR to `[new-app-project]`, there are two ways to do that:
   1) Copy contents of already ssr initialized `ngx-ssr-app` folder to newly created app folder `[new-app-name]`
-    - Edit `package.json`
-        - Change package name to `[@annuadvent/new-app-name]`;
+      - Edit `package.json`
+          - Change package name to `[@annuadvent/new-app-name]`;
   2) Or, For a fresh ssr app, run:
-    - `ng add @nguniversal/express-engine --project [new-app-name]`
-    - Or, `npm run ng:add:app:ssr []new-app-name]`
-    - Run `npm init` from the [new-app=name] root folder.
+      - `ng add @nguniversal/express-engine --project [new-app-name]`
+      - Or, `npm run ng:add:app:ssr []new-app-name]`
+      - Run `npm init` from the [new-app=name] root folder.
 - Add npm scripts in the `package.json` for the `[new-app-name]`, this makes easier to build/run/deploy app:
   - Copy all scripts of `ngx-ssr-app`, and replace `ngx-ssr-app` instances with your `[new-app-name]`.
   - All scripts should look like below:
@@ -44,22 +39,22 @@ From ngx-workspace root folder, run
       "watch:ngx-ssr-app:production": "ng build --configuration production --watch --project ngx-ssr-app",
 
       "dev:ssr/**ngx-ssr-app": "------------------------------------",
-      "dev:ssr:ngx-ssr-app:development:": "ng run ngx-ssr-app:serve-ssr:development",
+      "dev:ssr:ngx-ssr-app:development": "ng run ngx-ssr-app:serve-ssr:development",
       "dev:ssr:ngx-ssr-app:staging": "ng run ngx-ssr-app:serve-ssr:staging",
       "dev:ssr:ngx-ssr-app:production": "ng run ngx-ssr-app:serve-ssr:production",
 
       "build:ssr/**ngx-ssr-app": "------------------------------------",
-      "build:ssr:ngx-ssr-app:development:": "npm run build:ngx-ssr-app:development && ng run ngx-ssr-app:server:development",
+      "build:ssr:ngx-ssr-app:development": "npm run build:ngx-ssr-app:development && ng run ngx-ssr-app:server:development",
       "build:ssr:ngx-ssr-app:staging": "npm run build:ngx-ssr-app:staging && ng run ngx-ssr-app:server:staging",
       "build:ssr:ngx-ssr-app:production": "npm run build:ngx-ssr-app:production && ng run ngx-ssr-app:server:production",
 
       "serve:ssr/**ngx-ssr-app": "------------------------------------",
-      "serve:ssr:ngx-ssr-app:development:": "npm run build:ssr:ngx-ssr-app:development && node dist/ngx-ssr-app/server/main.js",
+      "serve:ssr:ngx-ssr-app:development": "npm run build:ssr:ngx-ssr-app:development && node dist/ngx-ssr-app/server/main.js",
       "serve:ssr:ngx-ssr-app:staging": "npm run build:ssr:ngx-ssr-app:staging && node dist/ngx-ssr-app/server/main.js",
       "serve:ssr:ngx-ssr-app:production": "npm run build:ssr:ngx-ssr-app:production && node dist/ngx-ssr-app/server/main.js",
 
       "prerender/**ngx-ssr-app": "------------------------------------",
-      "prerender:ngx-ssr-app:development:": "ng run ngx-ssr-app:prerender:development",
+      "prerender:ngx-ssr-app:development": "ng run ngx-ssr-app:prerender:development",
       "prerender:ngx-ssr-app:staging": "ng run ngx-ssr-app:prerender:staging",
       "prerender:ngx-ssr-app:production": "ng run ngx-ssr-app:prerender:production"
       }
@@ -263,6 +258,12 @@ From ngx-workspace root folder, run
         }
       }
       ```
+- Create new Github repository for your application
+  - Run `git init` in the root folder of your lib `./projects/[new-app-name]`
+  - From your Github desktop or command line or from any other git tool, Add and publish newly created lib git repository to remote github.
+  - Commit and publish Initial changes to github main/master branch.
+- Add newly created app project as a Git submodule to the workspace project
+  - `git submodule add <https://github.com/sunildivyam/[new-app-name].git> ./projects/[new-app-name]`
 - Firebase setup
   - `firebase-setup` folder has firebase setup already initialized, with `staging` and `production` projects.
   - Replace firebase project names with your own firebase projects, as needed.
