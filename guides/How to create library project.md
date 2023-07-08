@@ -113,3 +113,15 @@ From ngx-workspace root folder, run
   - Commit and publish Initial changes to github main/master branch.
 - Add newly created lib project as a Git submodule to the workspace project
   - `git submodule add https://github.com/sunildivyam/[new-lib-name].git ./projects/[new-lib-name]`
+- Add `projects/[lib-name]/tsconfig.doc.json` file to the root of the lib for generating documentation json or site:
+  ```
+  {
+      "include": [
+          "./**/*.ts"
+      ],
+      "exclude": [
+          "./**/*.spec.ts"
+      ]
+  }
+
+  ```

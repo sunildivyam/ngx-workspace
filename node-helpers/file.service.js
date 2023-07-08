@@ -1,6 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
+
+const readFileSync = (filePath) => {
+    return fs.readFileSync(filePath, { encoding: 'utf-8' });
+}
+
 const writeFileSync = (filePath, data, forceCreateDirs = true) => {
     const dirPath = path.dirname(filePath);
     if (!fs.existsSync(dirPath) && forceCreateDirs) {
@@ -53,6 +58,7 @@ const listFilesAndFolders = (srcFolder, recursive = false) => {
 }
 
 module.exports = {
+    readFileSync,
     writeFileSync,
     copyFileSync,
     appendFileSync,
