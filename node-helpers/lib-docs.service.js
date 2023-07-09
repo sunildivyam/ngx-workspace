@@ -1,16 +1,10 @@
 const { readFileSync, writeFileSync } = require('./file.service');
+const showdown = require('showdown');
 
-const libInfo = {
-    name: '',
-    fullName: '',
-    version: '',
-    description: '',
-    homepage: '',
-    bugs: '',
-    git: '',
-    dependencies: [],
-    node: '',
-    npm: '',
+const md2html = (mdText) => {
+    const converter = new showdown.Converter();
+    let html = converter.makeHtml(mdText);
+    return html;
 }
 
 const createLibDocsJson = (libName) => {
@@ -25,7 +19,7 @@ const createLibDocsJson = (libName) => {
         name: libName,
         fullName: pkg.name,
         version: pkg.version,
-        description: mdStr,
+        description: md2html(mdStr),
         homepage: pkg.homepage,
         bugs: pkg.bugs,
         git: pkg.repository.url,
