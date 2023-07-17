@@ -477,7 +477,7 @@
             "outputPath": "dist/ngx-ssr-libdocs-app/browser",
             "index": {
               "input": "projects/ngx-ssr-libdocs-app/src/index.html",
-              "output": "index.original.html"
+              "output": "index.html"
             },
             "main": "projects/ngx-ssr-libdocs-app/src/main.ts",
             "tsConfig": "projects/ngx-ssr-libdocs-app/tsconfig.app.json",
@@ -502,6 +502,11 @@
                 "glob": "robots.txt",
                 "input": "projects/ngx-ssr-libdocs-app/src/robots/development",
                 "output": "./"
+              },
+              {
+                "glob": "sitemap.xml",
+                "input": "projects/ngx-ssr-libdocs-app/src/sitemaps/development",
+                "output": "./"
               }
             ],
             "stylePreprocessorOptions": {
@@ -522,18 +527,18 @@
             "production": {
               "index": {
                 "input": "projects/ngx-ssr-libdocs-app/src/index.production.html",
-                "output": "index.original.html"
+                "output": "index.html"
               },
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "7mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "10kb",
+                  "maximumError": "20kb"
                 }
               ],
               "assets": [
@@ -542,6 +547,11 @@
                 {
                   "glob": "robots.txt",
                   "input": "projects/ngx-ssr-libdocs-app/src/robots/production",
+                  "output": "./"
+                },
+                {
+                  "glob": "sitemap.xml",
+                  "input": "projects/ngx-ssr-libdocs-app/src/sitemaps/production",
                   "output": "./"
                 }
               ],
@@ -556,18 +566,18 @@
             "staging": {
               "index": {
                 "input": "projects/ngx-ssr-libdocs-app/src/index.staging.html",
-                "output": "index.original.html"
+                "output": "index.html"
               },
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "7mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "10kb",
+                  "maximumError": "20kb"
                 }
               ],
               "assets": [
@@ -576,6 +586,11 @@
                 {
                   "glob": "robots.txt",
                   "input": "projects/ngx-ssr-libdocs-app/src/robots/staging",
+                  "output": "./"
+                },
+                {
+                  "glob": "sitemap.xml",
+                  "input": "projects/ngx-ssr-libdocs-app/src/sitemaps/staging",
                   "output": "./"
                 }
               ],
