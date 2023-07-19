@@ -27,36 +27,47 @@ From ngx-workspace root folder, run
       "start:ngx-ssr-app:development": "ng serve --configuration development --project ngx-ssr-app",
       "start:ngx-ssr-app:staging": "ng serve --configuration staging --project ngx-ssr-app",
       "start:ngx-ssr-app:production": "ng serve --configuration production --project ngx-ssr-app",
-
       "build/**ngx-ssr-app": "------------------------------------",
       "build:ngx-ssr-app:development": "ng build --configuration development --project ngx-ssr-app",
       "build:ngx-ssr-app:staging": "ng build --configuration staging --project ngx-ssr-app",
       "build:ngx-ssr-app:production": "ng build --configuration production --project ngx-ssr-app",
-
       "watch/**ngx-ssr-app": "------------------------------------",
       "watch:ngx-ssr-app:development": "ng build --configuration development --watch --project ngx-ssr-app",
       "watch:ngx-ssr-app:staging": "ng build --configuration staging --watch --project ngx-ssr-app",
       "watch:ngx-ssr-app:production": "ng build --configuration production --watch --project ngx-ssr-app",
-
       "dev:ssr/**ngx-ssr-app": "------------------------------------",
       "dev:ssr:ngx-ssr-app:development": "ng run ngx-ssr-app:serve-ssr:development",
       "dev:ssr:ngx-ssr-app:staging": "ng run ngx-ssr-app:serve-ssr:staging",
       "dev:ssr:ngx-ssr-app:production": "ng run ngx-ssr-app:serve-ssr:production",
-
       "build:ssr/**ngx-ssr-app": "------------------------------------",
       "build:ssr:ngx-ssr-app:development": "npm run build:ngx-ssr-app:development && ng run ngx-ssr-app:server:development",
       "build:ssr:ngx-ssr-app:staging": "npm run build:ngx-ssr-app:staging && ng run ngx-ssr-app:server:staging",
       "build:ssr:ngx-ssr-app:production": "npm run build:ngx-ssr-app:production && ng run ngx-ssr-app:server:production",
-
       "serve:ssr/**ngx-ssr-app": "------------------------------------",
       "serve:ssr:ngx-ssr-app:development": "npm run build:ssr:ngx-ssr-app:development && node dist/ngx-ssr-app/server/main.js",
       "serve:ssr:ngx-ssr-app:staging": "npm run build:ssr:ngx-ssr-app:staging && node dist/ngx-ssr-app/server/main.js",
       "serve:ssr:ngx-ssr-app:production": "npm run build:ssr:ngx-ssr-app:production && node dist/ngx-ssr-app/server/main.js",
-
       "prerender/**ngx-ssr-app": "------------------------------------",
       "prerender:ngx-ssr-app:development": "ng run ngx-ssr-app:prerender:development",
       "prerender:ngx-ssr-app:staging": "ng run ngx-ssr-app:prerender:staging",
-      "prerender:ngx-ssr-app:production": "ng run ngx-ssr-app:prerender:production"
+      "prerender:ngx-ssr-app:production": "ng run ngx-ssr-app:prerender:production",
+      "firebase:build/**ngx-ssr-app": "------------------------------------",
+      "firebase:copy:build:ngx-ssr-app": "del-cli --force projects/ngx-ssr-app/firebase-setup/functions/dist/ngx-ssr-app && cpy dist/ngx-ssr-app projects/ngx-ssr-app/firebase-setup/functions",
+      "firebase:build:ngx-ssr-app:development": "npm run build:ssr:ngx-ssr-app:development && npm run firebase:copy:build:ngx-ssr-app",
+      "firebase:build:ngx-ssr-app:staging": "npm run build:ssr:ngx-ssr-app:staging && npm run firebase:copy:build:ngx-ssr-app",
+      "firebase:build:ngx-ssr-app:production": "npm run build:ssr:ngx-ssr-app:production && npm run firebase:copy:build:ngx-ssr-app",
+      "firebase:serve/**ngx-ssr-app": "------------------------------------",
+      "firebase:serve:ngx-ssr-app:development": "npm run firebase:build:ngx-ssr-app:development && cd projects/ngx-ssr-app/firebase-setup && firebase use staging && firebase serve",
+      "firebase:serve:ngx-ssr-app:staging": "npm run firebase:build:ngx-ssr-app:staging && cd projects/ngx-ssr-app/firebase-setup && firebase use staging && firebase serve",
+      "firebase:serve:ngx-ssr-app:production": "npm run firebase:build:ngx-ssr-app:production && cd projects/ngx-ssr-app/firebase-setup && firebase use production && firebase serve",
+      "firebase:deploy/**ngx-ssr-app": "------------------------------------",
+      "firebase:deploy:ngx-ssr-app:staging": "npm run firebase:build:ngx-ssr-app:staging && cd projects/ngx-ssr-app/firebase-setup && firebase deploy --except hosting -P staging",
+      "firebase:deploy:ngx-ssr-app:production": "npm run firebase:build:ngx-ssr-app:production && cd projects/ngx-ssr-app/firebase-setup && firebase deploy --except hosting -P production",
+      "firebase:deploy:hosting:ngx-ssr-app:staging": "cd projects/ngx-ssr-app/firebase-setup && firebase deploy --only hosting:staging -P staging",
+      "firebase:deploy:hosting:ngx-ssr-app:production": "cd projects/ngx-ssr-app/firebase-setup && firebase deploy --only hosting:production -P production",
+      "firebase:list:indexes/**ngx-ssr-app": "------------------------------------",
+      "firebase:list:indexes:ngx-ssr-app:staging": "cd projects/ngx-ssr-app/firebase-setup && firebase firestore:indexes -P staging",
+      "firebase:list:indexes:ngx-ssr-app:production": "cd projects/ngx-ssr-app/firebase-setup && firebase firestore:indexes -P production"
       }
     ```
 - Update `angular.json`:

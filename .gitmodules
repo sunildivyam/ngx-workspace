@@ -19,3 +19,6 @@
 [submodule "projects/ngx-ssr-libdocs-app"]
 	path = projects/ngx-ssr-libdocs-app
 	url = https://github.com/sunildivyam/ngx-ssr-libdocs-app.git
+[submodule "projects/ngx-ssr-infoverse-app"]
+	path = projects/ngx-ssr-infoverse-app
+	url = https://github.com/sunildivyam/ngx-ssr-infoverse-app.git
