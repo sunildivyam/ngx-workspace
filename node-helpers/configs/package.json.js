@@ -15,6 +15,14 @@ const packageJson = {
     'node': NODE_VERSION,
     'npm': NPM_VERSION
   },
+  "keywords": [
+    "TypeScript",
+    "javascript",
+    "javascript framework",
+    "Angular",
+    "Angular library",
+    "Angular components"
+  ],
   'peerDependencies': {
     '@angular/common': '^16.1.0',
     '@angular/core': '^16.1.0'

@@ -62,3 +62,18 @@ Using styles/stylesheets (scss) files across library projects or consumer applic
         ```
         @import 'mixins';
         ```
+
+## Importing _partial.scss files from other library project
+
+- Same as above, the only difference is give relative path of the `scss` source folder of the other libraries,  from both `node_modules` and `dist`
+    ```
+        "lib": {
+            "entryFile": "./public-api.ts",
+            "cssUrl": "inline",
+            "styleIncludePaths": [
+                "../../node_modules/ngx-common-ui/scss",
+                "../../dist/ngx-common-ui/scss",
+                "../../node_modules/some-lib"
+            ]
+        }
+    ```

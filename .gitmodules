@@ -10,3 +10,15 @@
 [submodule "projects/ngx-tools"]
 	path = projects/ngx-tools
 	url = https://github.com/sunildivyam/ngx-tools.git
+[submodule "projects/ngx-cms"]
+	path = projects/ngx-cms
+	url = https://github.com/sunildivyam/ngx-cms.git
+[submodule "projects/ngx-lib-docs"]
+	path = projects/ngx-lib-docs
+	url = https://github.com/sunildivyam/ngx-lib-docs.git
+[submodule "projects/ngx-ssr-libdocs-app"]
+	path = projects/ngx-ssr-libdocs-app
+	url = https://github.com/sunildivyam/ngx-ssr-libdocs-app.git
+[submodule "projects/ngx-ssr-infoverse-app"]
+	path = projects/ngx-ssr-infoverse-app
+	url = https://github.com/sunildivyam/ngx-ssr-infoverse-app.git
