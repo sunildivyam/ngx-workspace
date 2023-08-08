@@ -1,0 +1,9 @@
+{
+    "editor.formatOnSave": true,
+    "files.trimTrailingWhitespace": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#c07300",
+        "titleBar.activeBackground": "#c07300",
+        "titleBar.inactiveBackground": "#eca841"
+    }
+}
