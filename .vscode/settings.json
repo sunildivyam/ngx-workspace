@@ -5,5 +5,9 @@
         "statusBar.background": "#c07300",
         "titleBar.activeBackground": "#c07300",
         "titleBar.inactiveBackground": "#eca841"
-    }
+    },
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "prettier.enable": true,
+    "prettier.singleQuote": true,
+    "prettier.jsxSingleQuote": true,
 }
