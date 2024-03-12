@@ -23,6 +23,17 @@ From ngx-workspace root folder, run
     "node": "18.16.0",
     "npm": "9.5.1"
     },
+    "keywords": [
+    "Angular [new-lib-name] Components",
+    "Angular [new-lib-name] library",
+    "[new-lib-name]",
+    "Angular components",
+    "Angular ui components",
+    "[new-lib-name]",
+    "TypeScript",
+    "javascript",
+    "javascript framework"
+    ],
     ```
 - `DELETE` the `./src` folder and its content, if you do not want to expose/export directly from Lib.
 - add an public-api.ts file in the lib root and add an export to it
@@ -38,13 +49,15 @@ From ngx-workspace root folder, run
     ]
     ```
   - If `[lib-name]` uses any existing or external library's `SCSS` styles, then thier `scss` source folder path has to be added in the `[lib-name/ng-package.json]` file's `styleIncludePaths` for both `dist` and `node_modules` folders:
+
     ```
     "styleIncludePaths": [
       "../../dist/ngx-common-ui/scss",
       "../../node_modules/ngx-common-ui/scss"
     ]
     ```
-    **Note:**: ***This has to be included in all `[lib-name]/[module-name]/ng-package.json` files of each module that imports those styles.***
+
+    **Note:**: **_This has to be included in all `[lib-name]/[module-name]/ng-package.json` files of each module that imports those styles._**
 
   - Edit the `angular.json` too
     `"sourceRoot": "projects/[lib-name]",`
@@ -58,6 +71,7 @@ From ngx-workspace root folder, run
       },
 
     ```
+
 - Update `ngx-workspace/package.json` with `npm` scripts to `build` and `deploy` library
   ```
   "/**[lib-name]": "*********[lib-name]******************",
@@ -73,6 +87,7 @@ From ngx-workspace root folder, run
   "publish:ngx-common-ui": "npm run build:ngx-common-ui && cd dist/ngx-common-ui && npm publish --access public",
   ```
 - If your library uses another library from the workspace, then Add following to the `[lib-name/tsConfig.json]` files's `paths` array (**Why this is needed?**, see **More Info** section below):
+
   ```
   "paths": {
     "@annuadvent/[existing-lib-name]": [
@@ -85,6 +100,7 @@ From ngx-workspace root folder, run
   ```
 
   **Example:**
+
   ```
   "paths": {
     "@annuadvent/ngx-common-ui": [
@@ -101,10 +117,12 @@ From ngx-workspace root folder, run
     ]
   }
   ```
+
   **More Info**
-    - All library project must have their own path defined in `tsconfig.lib.json` for all other libraries used in it, from `dist` folder.
-    - Workspace root tsconfig.json should have paths `projects/[lib-name]` while `[lib-name]/tsconfig.lib.json` should have paths `dist/[lib-name]`.
-    - This is to avoid below **ERROR**:
+
+  - All library project must have their own path defined in `tsconfig.lib.json` for all other libraries used in it, from `dist` folder.
+  - Workspace root tsconfig.json should have paths `projects/[lib-name]` while `[lib-name]/tsconfig.lib.json` should have paths `dist/[lib-name]`.
+  - This is to avoid below **ERROR**:
     `.ngtypecheck.ts' is not under 'rootDir'. 'rootDir' is expected to contain all source files`
 
 - Create new Github repository for your library
@@ -114,6 +132,7 @@ From ngx-workspace root folder, run
 - Add newly created lib project as a Git submodule to the workspace project
   - `git submodule add https://github.com/sunildivyam/[new-lib-name].git ./projects/[new-lib-name]`
 - Add `projects/[lib-name]/tsconfig.doc.json` file to the root of the lib for generating documentation json or site:
+
   ```
   {
       "include": [
