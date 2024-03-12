@@ -47,7 +47,13 @@
       ],
       "@annuadvent/ngx-lib-docs/*": [
         "projects/ngx-lib-docs/*"
-      ]
+      ],
+      "@annuadvent/ngx-ecommerce": [
+        "projects/ngx-ecommerce"
+      ],
+      "@annuadvent/ngx-ecommerce/*": [
+        "projects/ngx-ecommerce/*"
+      ],
     },
     "declaration": false,
     "downlevelIteration": true,
