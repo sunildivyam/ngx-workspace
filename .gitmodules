@@ -22,3 +22,6 @@
 [submodule "projects/ngx-ssr-infoverse-app"]
 	path = projects/ngx-ssr-infoverse-app
 	url = https://github.com/sunildivyam/ngx-ssr-infoverse-app.git
+[submodule "projects/ngx-ecommerce"]
+	path = projects/ngx-ecommerce
+	url = https://github.com/sunildivyam/ngx-ecommerce.git
