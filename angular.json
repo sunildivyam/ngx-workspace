@@ -1046,6 +1046,271 @@
           }
         }
       }
+    },
+    "ngx-ssr-ecommerce-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ngx-ssr-ecommerce-app",
+      "sourceRoot": "projects/ngx-ssr-ecommerce-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ngx-ssr-ecommerce-app/browser",
+            "index": {
+              "input": "projects/ngx-ssr-ecommerce-app/src/index.html",
+              "output": "index.original.html"
+            },
+            "main": "projects/ngx-ssr-ecommerce-app/src/main.ts",
+            "tsConfig": "projects/ngx-ssr-ecommerce-app/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "polyfills": [
+              "zone.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "dialog-polyfill",
+              "prismjs",
+              "buffer",
+              "stream",
+              "xml-js",
+              "showdown",
+              "compressorjs"
+            ],
+            "assets": [
+              "projects/ngx-ssr-ecommerce-app/src/favicon.ico",
+              "projects/ngx-ssr-ecommerce-app/src/assets",
+              {
+                "glob": "robots.txt",
+                "input": "projects/ngx-ssr-ecommerce-app/src/robots/development",
+                "output": "./"
+              }
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/@annuadvent/ngx-common-ui/scss",
+                "dist/ngx-common-ui/scss",
+                "projects/ngx-common-ui/scss",
+                "node_modules/prismjs/themes",
+                "node_modules/firebaseui/dist"
+              ]
+            },
+            "styles": [
+              "projects/ngx-ssr-ecommerce-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "index": {
+                "input": "projects/ngx-ssr-ecommerce-app/src/index.production.html",
+                "output": "index.original.html"
+              },
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "7mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kb",
+                  "maximumError": "20kb"
+                }
+              ],
+              "assets": [
+                "projects/ngx-ssr-ecommerce-app/src/favicon.ico",
+                "projects/ngx-ssr-ecommerce-app/src/assets",
+                {
+                  "glob": "robots.txt",
+                  "input": "projects/ngx-ssr-ecommerce-app/src/robots/production",
+                  "output": "./"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-ssr-ecommerce-app/src/environments/environment.ts",
+                  "with": "projects/ngx-ssr-ecommerce-app/src/environments/environment.production.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "staging": {
+              "index": {
+                "input": "projects/ngx-ssr-ecommerce-app/src/index.staging.html",
+                "output": "index.original.html"
+              },
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "7mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kb",
+                  "maximumError": "20kb"
+                }
+              ],
+              "assets": [
+                "projects/ngx-ssr-ecommerce-app/src/favicon.ico",
+                "projects/ngx-ssr-ecommerce-app/src/assets",
+                {
+                  "glob": "robots.txt",
+                  "input": "projects/ngx-ssr-ecommerce-app/src/robots/staging",
+                  "output": "./"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-ssr-ecommerce-app/src/environments/environment.ts",
+                  "with": "projects/ngx-ssr-ecommerce-app/src/environments/environment.staging.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-ssr-ecommerce-app:build:production"
+            },
+            "staging": {
+              "browserTarget": "ngx-ssr-ecommerce-app:build:staging"
+            },
+            "development": {
+              "browserTarget": "ngx-ssr-ecommerce-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-ssr-ecommerce-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/ngx-ssr-ecommerce-app/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ngx-ssr-ecommerce-app/src/favicon.ico",
+              "projects/ngx-ssr-ecommerce-app/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-ssr-ecommerce-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/ngx-ssr-ecommerce-app/server",
+            "main": "projects/ngx-ssr-ecommerce-app/server.ts",
+            "tsConfig": "projects/ngx-ssr-ecommerce-app/tsconfig.server.json",
+            "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/@annuadvent/ngx-common-ui/scss",
+                "dist/ngx-common-ui/scss",
+                "projects/ngx-common-ui/scss",
+                "node_modules/firebaseui/dist"
+              ]
+            }
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-ssr-ecommerce-app/src/environments/environment.ts",
+                  "with": "projects/ngx-ssr-ecommerce-app/src/environments/environment.production.ts"
+                }
+              ]
+            },
+            "staging": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-ssr-ecommerce-app/src/environments/environment.ts",
+                  "with": "projects/ngx-ssr-ecommerce-app/src/environments/environment.staging.ts"
+                }
+              ]
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "ngx-ssr-ecommerce-app:build:development",
+              "serverTarget": "ngx-ssr-ecommerce-app:server:development"
+            },
+            "staging": {
+              "browserTarget": "ngx-ssr-ecommerce-app:build:staging",
+              "serverTarget": "ngx-ssr-ecommerce-app:server:staging"
+            },
+            "production": {
+              "browserTarget": "ngx-ssr-ecommerce-app:build:production",
+              "serverTarget": "ngx-ssr-ecommerce-app:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-ssr-ecommerce-app:build:production",
+              "serverTarget": "ngx-ssr-ecommerce-app:server:production"
+            },
+            "staging": {
+              "browserTarget": "ngx-ssr-ecommerce-app:build:staging",
+              "serverTarget": "ngx-ssr-ecommerce-app:server:staging"
+            },
+            "development": {
+              "browserTarget": "ngx-ssr-ecommerce-app:build:development",
+              "serverTarget": "ngx-ssr-ecommerce-app:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
     }
   },
   "cli": {

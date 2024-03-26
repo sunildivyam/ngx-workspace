@@ -25,3 +25,6 @@
 [submodule "projects/ngx-ecommerce"]
 	path = projects/ngx-ecommerce
 	url = https://github.com/sunildivyam/ngx-ecommerce.git
+[submodule "projects/ngx-ssr-ecommerce-app"]
+	path = projects/ngx-ssr-ecommerce-app
+	url = https://github.com/sunildivyam/ngx-ssr-ecommerce-app.git
