@@ -9,5 +9,6 @@
     "typescript.tsdk": "node_modules\\typescript\\lib",
     "prettier.enable": true,
     "prettier.singleQuote": true,
+    "prettier.trailingComma":"none",
     "prettier.jsxSingleQuote": true,
 }
