@@ -1230,6 +1230,10 @@
             "outputPath": "dist/ngx-ssr-ecommerce-app/server",
             "main": "projects/ngx-ssr-ecommerce-app/server.ts",
             "tsConfig": "projects/ngx-ssr-ecommerce-app/tsconfig.server.json",
+            "externalDependencies": [
+              "firebase-admin",
+              "firebase-functions"
+            ],
             "inlineStyleLanguage": "scss",
             "stylePreprocessorOptions": {
               "includePaths": [
@@ -1238,7 +1242,14 @@
                 "projects/ngx-common-ui/scss",
                 "node_modules/firebaseui/dist"
               ]
-            }
+            },
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/ngx-ssr-ecommerce-app/firebase-setup/service-json",
+                "output": "./ff6758hhyte44536677745ll"
+              }
+            ]
           },
           "configurations": {
             "production": {
